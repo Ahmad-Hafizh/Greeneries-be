@@ -157,18 +157,13 @@ export class AuthController {
 
   async createProfileOauth(req: Request, res: Response): Promise<any> {
     try {
-      const { email } = req.body;
+      const { userId } = req.body;
       const isExist = await prisma.user.findUnique({
-        where: { email },
-        include: { accounts: true },
+        where: { id: userId },
       });
 
       if (!isExist) {
         return ResponseHandler.error(res, 404, 'user not found');
-      }
-
-      if (!isExist.accounts) {
-        return ResponseHandler.error(res, 404, 'credentials sign in');
       }
 
       await prisma.profile.upsert({
