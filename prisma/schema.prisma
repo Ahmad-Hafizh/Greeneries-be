@@ -69,6 +69,16 @@ model Profile {
   userId String @unique
   user   User   @relation(fields: [userId], references: [id])
 
+  // personal referral
+  referral Referral? @relation("referral_owner")
+
+  // referred to
+  referred_to_id String?
+  referred_to    Referral? @relation("referred_to", fields: [referred_to_id], references: [referral_id])
+
+  // addresses
+  Address Address[]
+
   @@map("profiles")
 }
 
@@ -76,4 +86,37 @@ enum Role {
   user
   admin
   super_admin
+}
+
+model Referral {
+  referral_id   String @id @default(cuid())
+  referral_code String
+
+  // referral owner
+  profile_id String  @unique
+  profile    Profile @relation("referral_owner", fields: [profile_id], references: [profile_id])
+
+  // referred users
+  referred Profile[] @relation("referred_to")
+
+  @@map("referral")
+}
+
+model Address {
+  address_id   String @id @default(cuid())
+  address_name String
+  street       String
+  country      String
+  city         String
+  zipcode      String
+  unit         String
+  lat          String
+  lng          String
+
+  deleted_at DateTime?
+
+  profile_id String
+  profile    Profile @relation(fields: [profile_id], references: [profile_id])
+
+  @@map("address")
 }
