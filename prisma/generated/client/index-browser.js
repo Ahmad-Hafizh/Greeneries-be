@@ -157,7 +157,28 @@ exports.Prisma.SessionScalarFieldEnum = {
 exports.Prisma.ProfileScalarFieldEnum = {
   profile_id: 'profile_id',
   phone: 'phone',
-  userId: 'userId'
+  userId: 'userId',
+  referred_to_id: 'referred_to_id'
+};
+
+exports.Prisma.ReferralScalarFieldEnum = {
+  referral_id: 'referral_id',
+  referral_code: 'referral_code',
+  profile_id: 'profile_id'
+};
+
+exports.Prisma.AddressScalarFieldEnum = {
+  address_id: 'address_id',
+  address_name: 'address_name',
+  street: 'street',
+  country: 'country',
+  city: 'city',
+  zipcode: 'zipcode',
+  unit: 'unit',
+  lat: 'lat',
+  lng: 'lng',
+  deleted_at: 'deleted_at',
+  profile_id: 'profile_id'
 };
 
 exports.Prisma.SortOrder = {
@@ -184,7 +205,9 @@ exports.Prisma.ModelName = {
   User: 'User',
   Account: 'Account',
   Session: 'Session',
-  Profile: 'Profile'
+  Profile: 'Profile',
+  Referral: 'Referral',
+  Address: 'Address'
 };
 
 /**
