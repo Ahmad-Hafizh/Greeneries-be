@@ -1,7 +1,9 @@
-import express, { Application, Request, Response } from 'express';
+import express, { Application, NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { AuthRouter } from './routers/auth.router';
+import { AddressRouter } from './routers/address.router';
+import cookieParser from 'cookie-parser';
 dotenv.config();
 
 const PORT = 5050;
@@ -16,7 +18,13 @@ class App {
   }
 
   private configure() {
-    this.app.use(cors());
+    this.app.use(
+      cors({
+        origin: 'http://localhost:3000',
+        credentials: true,
+      })
+    );
+    this.app.use(cookieParser());
     this.app.use(express.json());
   }
 
@@ -27,6 +35,9 @@ class App {
 
     const authRoutes = new AuthRouter();
     this.app.use('/auth', authRoutes.getRoutes());
+
+    const addressRoutes = new AddressRouter();
+    this.app.use('/address', addressRoutes.getRoutes());
   }
 
   public startServer() {

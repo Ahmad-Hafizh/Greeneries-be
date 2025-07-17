@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { AuthController } from '../controllers/auth.controller';
-import { cookieToken } from '../middlewares/cookiesToken';
+import { cookiesToken } from '../middlewares/cookiesToken';
 import { verifyToken } from '../middlewares/verifyToken';
 
 export class AuthRouter {
@@ -25,7 +25,9 @@ export class AuthRouter {
 
     // general
     this.route.post('/user/detail', this.authController.getUserSessionDetail);
-    this.route.get('/user/role', cookieToken, this.authController.getUserRole);
+    this.route.get('/user/role', cookiesToken, this.authController.getUserRole);
+    this.route.post('/get-token', this.authController.getToken);
+    this.route.post('/convert-token', this.authController.convertToken);
   }
 
   public getRoutes() {
