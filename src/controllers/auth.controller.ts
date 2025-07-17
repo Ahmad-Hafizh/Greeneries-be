@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import ResponseHandler from '../utils/responseHandler';
 import prisma from '../prisma';
-import { sign } from 'jsonwebtoken';
+import { sign, verify } from 'jsonwebtoken';
 import { transporter } from '../utils/nodemailer';
 import { hashPassword } from '../utils/hashPassword';
 import { compareSync } from 'bcrypt';
@@ -216,6 +216,26 @@ export class AuthController {
       return ResponseHandler.success(res, 200, 'create profile success', {
         role: user.role,
       });
+    } catch (error) {
+      return ResponseHandler.error(res, 500, 'Internal Server Error', error);
+    }
+  }
+
+  async getToken(req: Request, res: Response): Promise<any> {
+    try {
+      const token = sign({ ...req.body }, process.env.TOKEN_KEY || 'secretkey');
+
+      return ResponseHandler.success(res, 200, 'create token success', token);
+    } catch (error) {
+      return ResponseHandler.error(res, 500, 'Internal Server Error', error);
+    }
+  }
+
+  async convertToken(req: Request, res: Response): Promise<any> {
+    try {
+      const payload = verify(req.body.token, process.env.TOKEN_KEY || 'secretkey');
+
+      return ResponseHandler.success(res, 200, 'create token success', payload);
     } catch (error) {
       return ResponseHandler.error(res, 500, 'Internal Server Error', error);
     }
