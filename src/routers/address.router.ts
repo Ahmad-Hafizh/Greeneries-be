@@ -15,6 +15,9 @@ export class AddressRouter {
 
   private initializeRoutes() {
     this.router.post('/create', cookiesToken, this.addressController.createAddress);
+    this.router.post('/create/reverse', cookiesToken, this.addressController.createAddressByCoordinates);
+    this.router.get('/list', cookiesToken, this.addressController.getAddressList);
+    this.router.get('/detail/:address_id', cookiesToken, this.addressController.getAddressDetail);
   }
 
   public getRoutes() {

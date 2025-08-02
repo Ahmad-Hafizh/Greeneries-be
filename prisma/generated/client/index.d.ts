@@ -7032,6 +7032,7 @@ export namespace Prisma {
     address_name: string | null
     street: string | null
     country: string | null
+    province: string | null
     city: string | null
     zipcode: string | null
     unit: string | null
@@ -7046,6 +7047,7 @@ export namespace Prisma {
     address_name: string | null
     street: string | null
     country: string | null
+    province: string | null
     city: string | null
     zipcode: string | null
     unit: string | null
@@ -7060,6 +7062,7 @@ export namespace Prisma {
     address_name: number
     street: number
     country: number
+    province: number
     city: number
     zipcode: number
     unit: number
@@ -7076,6 +7079,7 @@ export namespace Prisma {
     address_name?: true
     street?: true
     country?: true
+    province?: true
     city?: true
     zipcode?: true
     unit?: true
@@ -7090,6 +7094,7 @@ export namespace Prisma {
     address_name?: true
     street?: true
     country?: true
+    province?: true
     city?: true
     zipcode?: true
     unit?: true
@@ -7104,6 +7109,7 @@ export namespace Prisma {
     address_name?: true
     street?: true
     country?: true
+    province?: true
     city?: true
     zipcode?: true
     unit?: true
@@ -7191,6 +7197,7 @@ export namespace Prisma {
     address_name: string
     street: string
     country: string
+    province: string
     city: string
     zipcode: string
     unit: string
@@ -7222,6 +7229,7 @@ export namespace Prisma {
     address_name?: boolean
     street?: boolean
     country?: boolean
+    province?: boolean
     city?: boolean
     zipcode?: boolean
     unit?: boolean
@@ -7237,6 +7245,7 @@ export namespace Prisma {
     address_name?: boolean
     street?: boolean
     country?: boolean
+    province?: boolean
     city?: boolean
     zipcode?: boolean
     unit?: boolean
@@ -7252,6 +7261,7 @@ export namespace Prisma {
     address_name?: boolean
     street?: boolean
     country?: boolean
+    province?: boolean
     city?: boolean
     zipcode?: boolean
     unit?: boolean
@@ -7267,6 +7277,7 @@ export namespace Prisma {
     address_name?: boolean
     street?: boolean
     country?: boolean
+    province?: boolean
     city?: boolean
     zipcode?: boolean
     unit?: boolean
@@ -7276,7 +7287,7 @@ export namespace Prisma {
     profile_id?: boolean
   }
 
-  export type AddressOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"address_id" | "address_name" | "street" | "country" | "city" | "zipcode" | "unit" | "lat" | "lng" | "deleted_at" | "profile_id", ExtArgs["result"]["address"]>
+  export type AddressOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"address_id" | "address_name" | "street" | "country" | "province" | "city" | "zipcode" | "unit" | "lat" | "lng" | "deleted_at" | "profile_id", ExtArgs["result"]["address"]>
   export type AddressInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     profile?: boolean | ProfileDefaultArgs<ExtArgs>
   }
@@ -7297,6 +7308,7 @@ export namespace Prisma {
       address_name: string
       street: string
       country: string
+      province: string
       city: string
       zipcode: string
       unit: string
@@ -7732,6 +7744,7 @@ export namespace Prisma {
     readonly address_name: FieldRef<"Address", 'String'>
     readonly street: FieldRef<"Address", 'String'>
     readonly country: FieldRef<"Address", 'String'>
+    readonly province: FieldRef<"Address", 'String'>
     readonly city: FieldRef<"Address", 'String'>
     readonly zipcode: FieldRef<"Address", 'String'>
     readonly unit: FieldRef<"Address", 'String'>
@@ -8234,6 +8247,7 @@ export namespace Prisma {
     address_name: 'address_name',
     street: 'street',
     country: 'country',
+    province: 'province',
     city: 'city',
     zipcode: 'zipcode',
     unit: 'unit',
@@ -8687,6 +8701,7 @@ export namespace Prisma {
     address_name?: StringFilter<"Address"> | string
     street?: StringFilter<"Address"> | string
     country?: StringFilter<"Address"> | string
+    province?: StringFilter<"Address"> | string
     city?: StringFilter<"Address"> | string
     zipcode?: StringFilter<"Address"> | string
     unit?: StringFilter<"Address"> | string
@@ -8702,6 +8717,7 @@ export namespace Prisma {
     address_name?: SortOrder
     street?: SortOrder
     country?: SortOrder
+    province?: SortOrder
     city?: SortOrder
     zipcode?: SortOrder
     unit?: SortOrder
@@ -8720,6 +8736,7 @@ export namespace Prisma {
     address_name?: StringFilter<"Address"> | string
     street?: StringFilter<"Address"> | string
     country?: StringFilter<"Address"> | string
+    province?: StringFilter<"Address"> | string
     city?: StringFilter<"Address"> | string
     zipcode?: StringFilter<"Address"> | string
     unit?: StringFilter<"Address"> | string
@@ -8735,6 +8752,7 @@ export namespace Prisma {
     address_name?: SortOrder
     street?: SortOrder
     country?: SortOrder
+    province?: SortOrder
     city?: SortOrder
     zipcode?: SortOrder
     unit?: SortOrder
@@ -8755,6 +8773,7 @@ export namespace Prisma {
     address_name?: StringWithAggregatesFilter<"Address"> | string
     street?: StringWithAggregatesFilter<"Address"> | string
     country?: StringWithAggregatesFilter<"Address"> | string
+    province?: StringWithAggregatesFilter<"Address"> | string
     city?: StringWithAggregatesFilter<"Address"> | string
     zipcode?: StringWithAggregatesFilter<"Address"> | string
     unit?: StringWithAggregatesFilter<"Address"> | string
@@ -9117,6 +9136,7 @@ export namespace Prisma {
     address_name: string
     street: string
     country: string
+    province: string
     city: string
     zipcode: string
     unit: string
@@ -9131,6 +9151,7 @@ export namespace Prisma {
     address_name: string
     street: string
     country: string
+    province: string
     city: string
     zipcode: string
     unit: string
@@ -9145,6 +9166,7 @@ export namespace Prisma {
     address_name?: StringFieldUpdateOperationsInput | string
     street?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    province?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
     zipcode?: StringFieldUpdateOperationsInput | string
     unit?: StringFieldUpdateOperationsInput | string
@@ -9159,6 +9181,7 @@ export namespace Prisma {
     address_name?: StringFieldUpdateOperationsInput | string
     street?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    province?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
     zipcode?: StringFieldUpdateOperationsInput | string
     unit?: StringFieldUpdateOperationsInput | string
@@ -9173,6 +9196,7 @@ export namespace Prisma {
     address_name: string
     street: string
     country: string
+    province: string
     city: string
     zipcode: string
     unit: string
@@ -9187,6 +9211,7 @@ export namespace Prisma {
     address_name?: StringFieldUpdateOperationsInput | string
     street?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    province?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
     zipcode?: StringFieldUpdateOperationsInput | string
     unit?: StringFieldUpdateOperationsInput | string
@@ -9200,6 +9225,7 @@ export namespace Prisma {
     address_name?: StringFieldUpdateOperationsInput | string
     street?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    province?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
     zipcode?: StringFieldUpdateOperationsInput | string
     unit?: StringFieldUpdateOperationsInput | string
@@ -9588,6 +9614,7 @@ export namespace Prisma {
     address_name?: SortOrder
     street?: SortOrder
     country?: SortOrder
+    province?: SortOrder
     city?: SortOrder
     zipcode?: SortOrder
     unit?: SortOrder
@@ -9602,6 +9629,7 @@ export namespace Prisma {
     address_name?: SortOrder
     street?: SortOrder
     country?: SortOrder
+    province?: SortOrder
     city?: SortOrder
     zipcode?: SortOrder
     unit?: SortOrder
@@ -9616,6 +9644,7 @@ export namespace Prisma {
     address_name?: SortOrder
     street?: SortOrder
     country?: SortOrder
+    province?: SortOrder
     city?: SortOrder
     zipcode?: SortOrder
     unit?: SortOrder
@@ -10523,6 +10552,7 @@ export namespace Prisma {
     address_name: string
     street: string
     country: string
+    province: string
     city: string
     zipcode: string
     unit: string
@@ -10536,6 +10566,7 @@ export namespace Prisma {
     address_name: string
     street: string
     country: string
+    province: string
     city: string
     zipcode: string
     unit: string
@@ -10663,6 +10694,7 @@ export namespace Prisma {
     address_name?: StringFilter<"Address"> | string
     street?: StringFilter<"Address"> | string
     country?: StringFilter<"Address"> | string
+    province?: StringFilter<"Address"> | string
     city?: StringFilter<"Address"> | string
     zipcode?: StringFilter<"Address"> | string
     unit?: StringFilter<"Address"> | string
@@ -10849,6 +10881,7 @@ export namespace Prisma {
     address_name: string
     street: string
     country: string
+    province: string
     city: string
     zipcode: string
     unit: string
@@ -10862,6 +10895,7 @@ export namespace Prisma {
     address_name?: StringFieldUpdateOperationsInput | string
     street?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    province?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
     zipcode?: StringFieldUpdateOperationsInput | string
     unit?: StringFieldUpdateOperationsInput | string
@@ -10875,6 +10909,7 @@ export namespace Prisma {
     address_name?: StringFieldUpdateOperationsInput | string
     street?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    province?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
     zipcode?: StringFieldUpdateOperationsInput | string
     unit?: StringFieldUpdateOperationsInput | string
@@ -10888,6 +10923,7 @@ export namespace Prisma {
     address_name?: StringFieldUpdateOperationsInput | string
     street?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    province?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
     zipcode?: StringFieldUpdateOperationsInput | string
     unit?: StringFieldUpdateOperationsInput | string

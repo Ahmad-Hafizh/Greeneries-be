@@ -107,6 +107,7 @@ model Address {
   address_name String
   street       String
   country      String
+  province String
   city         String
   zipcode      String
   unit         String
